@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Flask Boggle{% endblock %}
+
+{% block content %}
+<h1>Boggle Start</h1>
+<section class="boggle-container container">
+    <table>
+        {% for row in board %}
+        <tr class="row-{{loop.index0}}">
+            {% for char in row %}
+            <td class="{{board.index(row)}}-{{loop.index0}}">
+                {{char}} 
+            </td>
+            {%endfor%}
+        </tr>
+    {% endfor %}
+    </table>
+</section>
+<form class="boggle-form" method="POST">
+    <label for="user-guess">Guess a word</label>
+    <input required id="user-guess" type="text" placeholder="word" name='guess'>
+    <button type="submit">Guess!</button>
+</form>
+<br>
+<span class="message"></span>
+<br>
+<section>
+    <p>Score: <b><span class="score">0</span></b></p>
+    <p>Time left: <b><span class="time">60</span></b></p>
+    <p>High Score: <b><span class="high-score">{{session['high_score']}}</span></b></p>
+    <p>Number of Plays: <b><span class="num-plays">{{session['num_plays']}}</span></b></p>
+</section>
+<div class="reset"></div>
+
+{% endblock %}
+{% block script %}<script src="/static/js/app.js"></script> {% endblock %}

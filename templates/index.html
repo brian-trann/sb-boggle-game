@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Flask Boggle{% endblock %}
+
+{% block content %}
+<h1>Boggle</h1>
+<form action="/start" class="start" method="POST">
+<button type="submit">Start Boggle!</button>
+</form>
+
+{% endblock %}

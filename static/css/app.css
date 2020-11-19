@@ -1,0 +1,15 @@
+h1{
+    padding: 20px;
+}
+section table{
+    padding: 10px;
+}
+td {
+    padding: 7px;
+    border: solid 1px #666;
+    text-align: center;
+    background-color: rgba(211,211,211, 0.34);
+}
+td:hover{
+    background-color: rgba(211,211,211, 0.54);
+}
